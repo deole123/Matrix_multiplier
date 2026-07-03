@@ -25,6 +25,6 @@ begin
 
 end
 
-assign eqz = (count == 3'd0);
+assign eqz = (count == 3'd1);
 
 endmodule

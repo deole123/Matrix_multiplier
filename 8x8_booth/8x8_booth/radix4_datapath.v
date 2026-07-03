@@ -90,7 +90,7 @@ Q_register QREG(
     .ldQ(ldQ),
     .sftQ2(sftQ2),
 
-    .data_in({8'b0,multiplier}),
+    .data_in(multiplier),
 
     .Ain(A[1:0]),
 
