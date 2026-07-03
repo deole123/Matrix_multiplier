@@ -83,7 +83,7 @@ module tb_radix4;
 
         $display("--------------------------------");
         $display("12 x 5");
-        $display("Product = %d",product);
+        $display("Product = %d",$signed(product));
         $display("--------------------------------");
 
         //-----------------------------
@@ -103,7 +103,7 @@ module tb_radix4;
 
         $display("--------------------------------");
         $display("15 x 8");
-        $display("Product = %d",product);
+        $display("Product = %d",$signed(product));
         $display("--------------------------------");
 
         //-----------------------------
@@ -123,7 +123,7 @@ module tb_radix4;
 
         $display("--------------------------------");
         $display("20 x 20");
-        $display("Product = %d",product);
+        $display("Product = %d",$signed(product));
         $display("--------------------------------");
 
         //-----------------------------
@@ -143,7 +143,7 @@ module tb_radix4;
 
         $display("--------------------------------");
         $display("-8 x 5");
-        $display("Product = %d",product);
+        $display("Product = %d",$signed(product));
         $display("--------------------------------");
 
         //-----------------------------
@@ -163,7 +163,7 @@ module tb_radix4;
 
         $display("--------------------------------");
         $display("-7 x -9");
-        $display("Product = %d",product);
+        $display("Product = %d",$signed(product));
         $display("--------------------------------");
 
         $finish;
