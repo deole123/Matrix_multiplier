@@ -1,0 +1,22 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../project_1.srcs/sources_1/new/4x4_multiplier.v" \
+"../../../../../../A_reg.v" \
+"../../../../../../PIPO.v" \
+"../../../../../../Q_reg.v" \
+"../../../../../../alu.v" \
+"../../../../../../booth_encoder.v" \
+"../../../../../../counter.v" \
+"../../../../../../history_reg.v" \
+"../../../../project_1.srcs/sources_1/new/mac_unit4.v" \
+"../../../../../../operand_generator.v" \
+"../../../../project_1.srcs/sources_1/new/radix4_datapath2.v" \
+"../../../../project_1.srcs/sources_1/new/raidx4_controller.v" \
+"../../../../project_1.srcs/sources_1/new/readix4_top.v" \
+"../../../../project_1.srcs/sim_1/new/tb_matrix_mult_4x4.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

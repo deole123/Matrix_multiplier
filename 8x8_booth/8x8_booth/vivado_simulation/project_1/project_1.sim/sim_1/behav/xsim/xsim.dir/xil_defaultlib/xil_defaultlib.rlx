@@ -1,0 +1,19 @@
+0.7
+2020.2
+May 22 2024
+19:03:11
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/A_reg.v,1782756327,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/PIPO.v,,A_register,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/PIPO.v,1782820218,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/Q_reg.v,,PIPO,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/Q_reg.v,1783067981,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/alu.v,,Q_register,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/alu.v,1782756512,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/booth_encoder.v,,ALU,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/booth_encoder.v,1782740305,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/counter.v,,booth_encoder,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/counter.v,1783067992,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/history_reg.v,,counter,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/history_reg.v,1782756444,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.srcs/sources_1/new/mac_unit4.v,,history_reg,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/operand_generator.v,1782740341,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.srcs/sources_1/new/radix4_datapath2.v,,operand_generator,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.srcs/sim_1/new/tb_matrix_mult_4x4.v,1788922487,verilog,,,,tb_matrix_mult_4x4,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.srcs/sources_1/new/4x4_multiplier.v,1788922367,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/A_reg.v,,matrix_mult_4x4,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.srcs/sources_1/new/mac_unit4.v,1788922435,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/operand_generator.v,,mac_unit4,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.srcs/sources_1/new/radix4_datapath2.v,1788951168,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.srcs/sources_1/new/raidx4_controller.v,,radix4_datapath,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.srcs/sources_1/new/raidx4_controller.v,1788951348,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.srcs/sources_1/new/readix4_top.v,,radix4_controller,,,,,,,,
+D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.srcs/sources_1/new/readix4_top.v,1788950914,verilog,,D:/coping intern/Matrix_multiplier/8x8_booth/8x8_booth/vivado_simulation/project_1/project_1.srcs/sim_1/new/tb_matrix_mult_4x4.v,,radix4_top,,,,,,,,

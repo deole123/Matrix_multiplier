@@ -1,192 +1,192 @@
-module radix4_datapath(
+    module radix4_datapath(
 
-    input clk,
+        input clk,
 
-    input ldA,
-    input ldQ,
-    input ldM,
+        input ldA,
+        input ldQ,
+        input ldM,
 
-    input clrA,
-    input clrQ,
-    input clrff,
-    input clrcnt,
+        input clrA,
+        input clrQ,
+        input clrff,
+        input clrcnt,
 
-    input sftA2,
-    input sftQ2,
+        input sftA2,
+        input sftQ2,
 
-    input decr,
-    input ldcnt,
+        input decr,
+        input ldcnt,
 
-    input [7:0] multiplicand,
-    input [7:0] multiplier,
+        input [7:0] multiplicand,
+        input [7:0] multiplier,
 
-    output qm1,
-    output eqz,
+        output qm1,
+        output eqz,
 
-    output [15:0] product
+        output [15:0] product
 
-);
+    );
 
-wire signed [15:0] A;
-wire [7:0] Q;
+    wire signed [15:0] A;
+    wire [7:0] Q;
 
-wire signed [15:0] M;
+    wire signed [15:0] M;
 
-wire signed [15:0] operand;
+    wire signed [15:0] operand;
 
-wire signed [15:0] Z;
+    wire signed [15:0] Z;
 
-wire sign;
+    wire sign;
 
-wire [1:0] mag_sel;
+    wire [1:0] mag_sel;
 
-wire [2:0] count;
+    wire [2:0] count;
 
-assign product = {A[7:0],Q};
+    assign product = {A[7:0],Q};
 
 
-//---------------------------------------------------
-// Multiplicand Register
-//---------------------------------------------------
+    //---------------------------------------------------
+    // Multiplicand Register
+    //---------------------------------------------------
 
-PIPO MREG(
+    PIPO MREG(
 
-    .clk(clk),
-    .load(ldM),
+        .clk(clk),
+        .load(ldM),
 
-    .data_in({{8{multiplicand[7]}},multiplicand}),
+        .data_in({{8{multiplicand[7]}},multiplicand}),
 
-    .data_out(M)
+        .data_out(M)
 
-);
+    );
 
 
-//---------------------------------------------------
-// A Register
-//---------------------------------------------------
+    //---------------------------------------------------
+    // A Register
+    //---------------------------------------------------
 
-A_register AREG(
+    A_register AREG(
 
-    .clk(clk),
-    .clrA(clrA),
-    .ldA(ldA),
-    .sftA2(sftA2),
+        .clk(clk),
+        .clrA(clrA),
+        .ldA(ldA),
+        .sftA2(sftA2),
 
-    .Z(Z),
+        .Z(Z),
 
-    .A(A)
+        .A(A)
 
-);
+    );
 
 
-//---------------------------------------------------
-// Q Register
-//---------------------------------------------------
+    //---------------------------------------------------
+    // Q Register
+    //---------------------------------------------------
 
-Q_register QREG(
+    Q_register QREG(
 
-    .clk(clk),
-    .clrQ(clrQ),
-    .ldQ(ldQ),
-    .sftQ2(sftQ2),
+        .clk(clk),
+        .clrQ(clrQ),
+        .ldQ(ldQ),
+        .sftQ2(sftQ2),
 
-    .data_in(multiplier),
+        .data_in(multiplier),
 
-    .Ain(A[1:0]),
+        .Ain(A[1:0]),
 
-    .Q(Q)
+        .Q(Q)
 
-);
+    );
 
 
-//---------------------------------------------------
-// History Register
-//---------------------------------------------------
+    //---------------------------------------------------
+    // History Register
+    //---------------------------------------------------
 
-history_reg HR(
+    history_reg HR(
 
-    .clk(clk),
+        .clk(clk),
 
-    .clrff(clrff),
+        .clrff(clrff),
 
-    .ld(sftQ2),
+        .ld(sftQ2),
 
-    .qm1_in(Q[1]),
+        .qm1_in(Q[1]),
 
-    .qm1(qm1)
+        .qm1(qm1)
 
-);
+    );
 
 
-//---------------------------------------------------
-// Booth Encoder
-//---------------------------------------------------
+    //---------------------------------------------------
+    // Booth Encoder
+    //---------------------------------------------------
 
-booth_encoder BE(
+    booth_encoder BE(
 
-    .Q1(Q[1]),
+        .Q1(Q[1]),
 
-    .Q0(Q[0]),
+        .Q0(Q[0]),
 
-    .qm1(qm1),
+        .qm1(qm1),
 
-    .sign(sign),
+        .sign(sign),
 
-    .mag_sel(mag_sel)
+        .mag_sel(mag_sel)
 
-);
+    );
 
 
-//---------------------------------------------------
-// Operand Generator
-//---------------------------------------------------
+    //---------------------------------------------------
+    // Operand Generator
+    //---------------------------------------------------
 
-operand_generator OG(
+    operand_generator OG(
 
-    .M(M),
+        .M(M),
 
-    .sign(sign),
+        .sign(sign),
 
-    .mag_sel(mag_sel),
+        .mag_sel(mag_sel),
 
-    .operand(operand)
+        .operand(operand)
 
-);
+    );
 
 
-//---------------------------------------------------
-// ALU
-//---------------------------------------------------
+    //---------------------------------------------------
+    // ALU
+    //---------------------------------------------------
 
-ALU ALU1(
+    ALU ALU1(
 
-    .A(A),
+        .A(A),
 
-    .operand(operand),
+        .operand(operand),
 
-    .Z(Z)
+        .Z(Z)
 
-);
+    );
 
 
-//---------------------------------------------------
-// Counter
-//---------------------------------------------------
+    //---------------------------------------------------
+    // Counter
+    //---------------------------------------------------
 
-counter CNT(
+    counter CNT(
 
-    .clk(clk),
+        .clk(clk),
 
-    .clr(clrcnt),
+        .clr(clrcnt),
 
-    .ldcnt(ldcnt),
+        .ldcnt(ldcnt),
 
-    .decr(decr),
+        .decr(decr),
 
-    .count(count),
+        .count(count),
 
-    .eqz(eqz)
+        .eqz(eqz)
 
-);
+    );
 
-endmodule
+    endmodule
